@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Sidebar } from "./components/Sidebar";
 
 export const Container = styled.div`
   width: 100vw;
@@ -10,22 +11,6 @@ export const Container = styled.div`
   background-color: #e9e9cf;
 `;
 
-export const SideStyle = styled.div`
-  background-color: purple;
-  width: 200px;
-  height: 100vh;
-`;
-
-export const Sidebar = () => {
-  return <SideStyle>qqq</SideStyle>;
-};
-
-// export const Teste = styled.div`
-//   width: 100vw;
-//   height: 100vh;
-//   background-color: rosybrown;
-// `;
-
 export default function Home() {
   const [viewp, setViewP] = useState({
     width: 0,
@@ -34,6 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     window.addEventListener("resize", (e) => {
+      console.log(e);
       // setViewP(...viewp, [{ width: e.currentTarget.innerWidth }]);
       // setViewP(viewp => {viewp, width: e.currentTarget.innerWidth})
       // setViewP({...viewp => {viewp, width: e.currentTarget.innerWidth});
@@ -56,9 +42,6 @@ export default function Home() {
     });
   }, []);
 
-  {
-    // console.log(viewp);
-  }
   return (
     <Container>
       <Sidebar></Sidebar>
